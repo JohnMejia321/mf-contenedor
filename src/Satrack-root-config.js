@@ -8,6 +8,13 @@ registerApplication({
 });
 
 
+registerApplication({
+  name: "@Satrack/mf-sidenav-izquierdo",
+  app: () => System.import("@Satrack/mf-sidenav-izquierdo"),
+  activeWhen: ["/"],
+});
+
+
 start({
   urlRerouteOnly: true,
 });
