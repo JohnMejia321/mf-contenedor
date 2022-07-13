@@ -5,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mapa Satrack</title>
+
+  <style>
+    .contenedor 
+    {
+        display: grid;
+        grid-template-areas: 'menu mapa' ;
+        gap : 20px;   
+        grid-template-columns: 0fr;
+    }
+
+    .aside-menu 
+    {
+       grid-area: menu;
+    }
+
+    .main-mapa
+    {
+      grid-area: mapa;
+      position: relative;
+      top: 36px;
+    }
+
+    .contenedor > div {
+      background-color: #fff;
+    }
+
+  </style>
+
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -75,12 +103,10 @@
     You need to enable JavaScript to run this app.
   </noscript>
   <main >
-   
-    <div id="single-spa-application:@Satrack/mf-mapa"></div>
-
-    <div id="single-spa-application:@Satrack/mf-sidenav-izquierdo"></div>
-
-    
+     <div class="contenedor">
+        <div id="single-spa-application:@Satrack/mf-sidenav-izquierdo" class="aside-menu"></div>
+        <div id="single-spa-application:@Satrack/mf-mapa" class="main-mapa"></div>
+     </div>
   </main>
   <script>
     System.import('@Satrack/root-config');
